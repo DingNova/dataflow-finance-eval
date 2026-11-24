@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dataflow-finance-eval"
+version = "0.1.0"
+description = "DataFlow extension: deterministic evaluation suite for financial QA accuracy, SQL accuracy and hallucination rate with aggregated reporting"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [
+    { name = "DingNova" },
+]
+keywords = ["dataflow", "finance", "llm", "data-centric-ai", "evaluation", "hallucination"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+# 核心依赖保持为空：主框架 open-dataflow 由用户按需安装，扩展包即插即用
+dependencies = []
+
+[project.optional-dependencies]
+sql = ["sqlglot>=20.0"]
+dev = ["pytest>=7.0", "pandas>=2.0"]
+
+[project.urls]
+Homepage = "https://github.com/DingNova/dataflow-finance-eval"
+Documentation = "https://opendcai.github.io/DataFlow-Doc/"
+
+[tool.setuptools.packages.find]
+include = ["dataflow_finance_eval*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

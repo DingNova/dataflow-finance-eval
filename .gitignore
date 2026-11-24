@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.eggs/
+
+# 测试与工具
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+
+# 数据与运行时产物（评测集金标除外）
+cache/
+output/
+*.pdf
+eval/finance_eval_sample_set_full.jsonl
+
+# IDE
+.idea/
+.vscode/
+.DS_Store
+
+# 密钥
+.env
